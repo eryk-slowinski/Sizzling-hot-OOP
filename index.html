@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sizzling hot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="neon">
+            <span class="text" data-text="Sizzling hot">Sizzling hot</span>
+            <span class="gradient"></span>
+            <span class="spotlight"></span>
+        </div>
+
+        <section class="game">
+            <div class="draw"></div>
+            <div class="draw"></div>
+            <div class="draw"></div>
+            <div class="draw"></div>
+        </section>
+
+        <section class="play">
+            <input type="number" placeholder="Your bet here" id="bid">
+            <button id="start">Start!</button>
+        </section>
+        <span class="result"></span>
+        <section class="panel">Your credits: <span class="wallet"></span></section>
+
+        <section class="score">
+            <span class="number"></span>
+            <span class="win"></span>
+            <span class="loss"></span>
+        </section>
+    </div>
+    <script src="Stats.js"></script>
+    <script src="Wallet.js"></script>
+    <script src="Result.js"></script>
+    <script src="Draw.js"></script>
+    <script src="Game.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

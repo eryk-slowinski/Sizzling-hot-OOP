@@ -1,0 +1,200 @@
+* {
+    box-sizing: border-box;
+    background-color: #000;
+    color: rgb(212, 80, 4);
+    margin-top: 5px;
+}
+
+.neon {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    filter: brightness(200%);
+}
+
+.text {
+    font-size: 80px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: white;
+}
+
+.text::before {
+    content: attr(data-text);
+    position: absolute;
+    filter: blur(0.02em);
+    mix-blend-mode: difference;
+}
+
+.gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, red, gold, rgb(218, 93, 10), rgb(218, 214, 8), red);
+    mix-blend-mode: multiply;
+}
+
+.spotlight {
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle, white, transparent 25%) center / 25% 25%,
+        radial-gradient(circle, white, black 25%) center / 12.5% 12.5%;
+    animation: light 5s linear infinite;
+    mix-blend-mode: color-dodge;
+}
+
+@keyframes light {
+    to {
+        transform: translate(50%, 50%);
+    }
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    font-family: 'open sans', roboto, sans-serif;
+}
+
+.game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+}
+
+.game div {
+    height: 120px;
+    width: 125px;
+    margin: 10px;
+    border: 1px solid rgb(77, 7, 7);
+}
+
+.play {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.play input {
+    height: 8vh;
+    width: 12%;
+    font-size: 20px;
+    border: 2px solid rgb(199, 24, 1);
+    text-align: center;
+}
+
+.play button {
+    width: 20%;
+    height: 10vh;
+    margin-top: 15px;
+    font-size: 35px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #e06703, #d30707);
+    border: none;
+    color: rgb(8, 8, 8);
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 3px;
+}
+
+.result {
+    height: 10vh;
+    text-align: center;
+    font-size: 60px;
+}
+
+.panel {
+    margin: 40px 40px 40px 0;
+    text-align: right;
+    font-size: 30px;
+}
+
+
+.score {
+    display: flex;
+    flex-direction: column;
+    font-size: 36px;
+}
+
+
+@media (max-width: 1024px) {
+
+    .play input {
+        width: 15%;
+        font-size: 12px;
+    }
+
+    .play button {
+        width: 25%;
+        font-size: 28px;
+        letter-spacing: 2px;
+    }
+
+    .result {
+        font-size: 27px;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .play input {
+        height: 9vh;
+        font-size: 12px;
+    }
+
+    .play button {
+        width: 28%;
+        height: 10vh;
+        font-size: 22px;
+        letter-spacing: 1px;
+    }
+
+    .game {
+        height: 35vh;
+    }
+
+    .score {
+        font-size: 26px;
+    }
+
+    .result {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 400px) and (orientation: portrait) {
+
+    .play input {
+        height: 9vh;
+        width: 25%;
+        font-size: 15px;
+    }
+
+    .play button {
+        width: 38%;
+        height: 15vh;
+        font-size: 22px;
+        letter-spacing: 1px;
+    }
+
+    .score {
+        font-size: 26px;
+    }
+
+    .result {
+        font-size: 30px;
+    }
+
+    .game div {
+        height: 100px;
+        width: 105px;
+    }
+}
