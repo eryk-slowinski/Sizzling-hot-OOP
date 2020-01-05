@@ -21,8 +21,10 @@ class Game {
         else if (!result && result !== "") result = 'Try again!';
         this.spanResult.textContent = result;
         this.spanNumber.textContent = `${stats[0]}  games in total`;
-        this.spanWin.textContent = `${stats[1]} wins`;
-        this.spanLoss.textContent = `${stats[2]} losses`;
+        if ((stats[1] === 0) || (stats[1] === 1)) this.spanWin.textContent = `${stats[1]} win`;
+        else this.spanWin.textContent = `${stats[1]} wins`;
+        if ((stats[2] === 0) || (stats[2] === 1)) this.spanLoss.textContent = `${stats[2]} loss`;
+        else this.spanLoss.textContent = `${stats[2]} losses`;
     }
     startGame() {
         if (this.inputBid.value < 1) {
